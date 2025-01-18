@@ -105,6 +105,23 @@ insert(index,val){
 
     return temp;
   }
+
+  reverse(){
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+
+    let next = temp.next;
+    let prev = null;
+
+    for( let i =0; i<this.length;i++){
+      next = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = next;
+    }
+    return this;
+  }
 }
 
 let one = new  SinglyLinkedList(10);
@@ -118,3 +135,4 @@ one.get(2);
 one.set(0,100);
 one.insert(2,2000)
 one.remove(1)
+one.reverse()
