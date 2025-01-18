@@ -65,6 +65,17 @@ class SinglyLinkedList{
     }
     return temp;
   }
+  get(index){
+    if(index<0 || index>=0){
+      return undefined
+    }
+    let temp = this.head;
+    for(let i=0;i<index;i++){
+      temp =temp.next;
+    }
+    console.log(temp);
+    return temp;
+  }
 }
 
 let one = new  SinglyLinkedList(10);
@@ -74,4 +85,5 @@ one.push(40);
 one.pop()
 one.unshift(1)
 one.shift()
+one.get(2)
 console.log(one)
