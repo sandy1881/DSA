@@ -76,6 +76,15 @@ class SinglyLinkedList{
     console.log(temp);
     return temp;
   }
+  set(index,val){
+    let temp = this.get(index);
+    console.log(temp)
+    if(temp){
+      temp.val = val;
+      return true;
+    }
+    return false;
+  }
 }
 
 let one = new  SinglyLinkedList(10);
@@ -86,4 +95,5 @@ one.pop()
 one.unshift(1)
 one.shift()
 one.get(2)
+console.log(one.set(0,100))
 console.log(one)
