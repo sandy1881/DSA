@@ -13,6 +13,21 @@ class SinglyLinkedList{
       this.tail = newNode;
       this.length = 1;
   }
+  push(val){
+    const newNode = new Node(val);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    }else{
+      this.tail.next = newNode;
+      this.tail = newNode;
+
+    }this.length++;
+    return this;
+  }
 }
 
 let one = new  SinglyLinkedList(10);
+one.push(20)
+
+console.log(one)
