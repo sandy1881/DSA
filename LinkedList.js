@@ -42,6 +42,17 @@ class SinglyLinkedList{
     }
     return this;
   }
+  unshift(val){
+    const newNode = new Node(val);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
 }
 
 let one = new  SinglyLinkedList(10);
@@ -49,5 +60,6 @@ one.push(20);
 one.push(30);
 one.push(40);
 one.pop()
+one.unshift(1)
 
 console.log(one)
