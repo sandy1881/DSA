@@ -88,6 +88,12 @@ class DoublyLinkedList{
     }
     return temp;
   }
+  set(index,val){
+    let temp = this.get(index);
+    if(temp){
+      temp.val = val;
+    }
+  }
 
 }
 
@@ -99,5 +105,6 @@ first.push(50);
 first.pop()
 first.unshift(1);
 first.shift();
+first.get(1);
+first.set(2,20)
 console.log(first);
-console.log(first.get(1))
