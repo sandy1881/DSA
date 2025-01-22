@@ -67,7 +67,7 @@ class SinglyLinkedList{
       let temp = this.head;
       for(let i=0;i<index;i++){
           temp=temp.next;
-         
+
       }
       console.log(temp);
       return temp;
