@@ -24,6 +24,15 @@ class Stack{
     this.length++;
     return this;
   }
+
+  pop(){
+    if(this.length === 0)return undefined;
+    let temp = this.top;
+    this.top = this.top.next;
+    temp.next = null;
+    this.length--;
+    return temp;
+  }
 }
 
 let first = new Stack(1);
@@ -31,5 +40,5 @@ first.push(2);
 first.push(3);
 first.push(4);
 first.push(5);
-
+first.pop();
 console.log(first);
