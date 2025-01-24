@@ -10,7 +10,38 @@ class BST{
   constructor(){
     this.root = null;
   }
+
+  insert(val){
+    const newNode = new Node(val);
+    if(this.root === null){
+      this.root = newNode;
+      return this;
+    }
+    let temp = this.root;
+    while(true){
+      if(newNode.val === temp.val) return undefined;
+      if(newNode.val < temp.val){
+        if(temp.left === null){
+          temp.left = newNode;
+          return this;
+        }
+        temp = temp.left;
+      }
+      else{
+        if(temp.right === null){
+          temp.right = newNode;
+          return this;
+        }
+        temp = temp.right;
+      }
+    }
+  }
 }
 
 let first = new BST();
+first.insert(100);
+first.insert(90);
+first.insert(150);
+first.insert(80);
+first.insert(95);
 console.log(first);
