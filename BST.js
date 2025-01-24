@@ -36,6 +36,28 @@ class BST{
       }
     }
   }
+
+find(val){
+  if(this.root === null){
+    return false;
+  }
+  let temp = this.root;
+  while(temp){
+    if(val < temp.val){
+      temp = temp.left;
+    }
+    else if(val > temp.val){
+      temp = temp.right;
+    }
+    else{
+      if(val === temp.val){
+        return true;
+      }
+      return false;
+    }
+  }
+}
+
 }
 
 let first = new BST();
@@ -44,4 +66,6 @@ first.insert(90);
 first.insert(150);
 first.insert(80);
 first.insert(95);
+console.log(first.find(95));
+console.log(first.find(10000));
 console.log(first);
