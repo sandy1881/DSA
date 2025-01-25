@@ -87,6 +87,19 @@ DFSPreOrder(){
 }
 
 
+DFSPostOrder(){
+  let result = [];
+  function traverse(currentNode){
+    if(currentNode.left) traverse(currentNode.left);
+    if(currentNode.right) traverse(currentNode.right);
+
+    result.push(currentNode.val)
+  }
+  traverse(this.root);
+  return result;
+}
+
+
 }
 
 let first = new BST();
@@ -99,4 +112,5 @@ first.insert(95);
 // console.log(first.find(10000));
 // console.log(first);
 //console.log(first.BFS())
-console.log(first.DFSPreOrder())
+console.log(first.DFSPreOrder());
+console.log(first.DFSPostOrder());
