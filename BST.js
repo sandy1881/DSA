@@ -75,7 +75,16 @@ BFS(){
   }
   return results;
 }
-
+DFSPreOrder(){
+  let result = [];
+  function traverse(currentNode){
+    result.push(currentNode.val);
+    if(currentNode.left) traverse(currentNode.left);
+    if(currentNode.right) traverse(currentNode.right);
+  }
+  traverse(this.root);
+  return result;
+}
 
 
 }
@@ -89,4 +98,5 @@ first.insert(95);
 // console.log(first.find(95));
 // console.log(first.find(10000));
 // console.log(first);
-console.log(first.BFS())
+//console.log(first.BFS())
+console.log(first.DFSPreOrder())
