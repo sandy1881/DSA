@@ -58,6 +58,26 @@ find(val){
   }
 }
 
+BFS(){
+  let currentNode = this.root;
+  let queue = [];
+  let results = [];
+  queue.push(currentNode);
+  while(queue.length){
+    currentNode = queue.shift()
+    results.push(currentNode.val);
+    if(currentNode.left) {
+      queue.push(currentNode.left);
+    }
+    if(currentNode.right){
+      queue.push(currentNode.right);
+    }
+  }
+  return results;
+}
+
+
+
 }
 
 let first = new BST();
@@ -66,6 +86,7 @@ first.insert(90);
 first.insert(150);
 first.insert(80);
 first.insert(95);
-console.log(first.find(95));
-console.log(first.find(10000));
-console.log(first);
+// console.log(first.find(95));
+// console.log(first.find(10000));
+// console.log(first);
+console.log(first.BFS())
