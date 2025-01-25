@@ -100,6 +100,18 @@ DFSPostOrder(){
 }
 
 
+
+DFSInOrder(){
+  let result = [];
+  function traverse(currentNode){
+    if(currentNode.left) traverse(currentNode.left);
+    result.push(currentNode.val);
+    if(currentNode.right) traverse(currentNode.right);
+  }
+  traverse(this.root);
+  return result;
+}
+
 }
 
 let first = new BST();
@@ -114,3 +126,4 @@ first.insert(95);
 //console.log(first.BFS())
 console.log(first.DFSPreOrder());
 console.log(first.DFSPostOrder());
+console.log(first.DFSInOrder())
